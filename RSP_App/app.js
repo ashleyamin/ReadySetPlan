@@ -7,6 +7,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 7000;
 
+// static files
+app.use(express.static('public'));
+
 //use dependencies
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
