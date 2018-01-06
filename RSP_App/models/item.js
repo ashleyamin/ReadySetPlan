@@ -15,10 +15,11 @@ Item.update = (item, id) => {
     `
       UPDATE items SET
       title = $1,
-      description = $2
-      WHERE id = $3
+      description = $2,
+      location_id = $3
+      WHERE id = $4
     `,
-    [item.title, item.description, id]
+    [item.title, item.description, item.location_id, id]
   );
 };
 
@@ -26,10 +27,10 @@ Item.create = item => {
   return db.one(
     `
       INSERT INTO items
-      (title, description)
-      VALUES ($1, $2) RETURNING *
+      (title, description, location_id)
+      VALUES ($1, $2, $3) RETURNING *
     `,
-    [item.title, item.description]
+    [item.title, item.description, item.location_id]
   );
 };
 

@@ -19,6 +19,16 @@
       <label for="description">Description</label>
       <input id="description" type="text" name="description" value="<%= item.description %>" />
       <br />
+      <label for="location_id">Location</label>
+      <select id="location_id" name="location_id">
+        <% location.forEach(location => { %>
+          <option
+            value="<%= location.id %>"
+            selected="<%= item.location_id %>">
+            <%= `${location.title}` %>
+          </option>
+        <% }) %>
+      </select>
       <input type="submit" value="Save changes" />
     </form>
     <form action="<%= `/plan/${item.id}?_method=DELETE` %>" method="POST">
