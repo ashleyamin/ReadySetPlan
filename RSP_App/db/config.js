@@ -20,8 +20,8 @@ function setDatabase() {
   } else if (process.env.NODE_ENV === 'production') {
       return pgp(process.env.DATABASE_URL)
   }
-}
+};
 
-const db = setDatabase()
+const db = setDatabase();
 
-module.exports = db
+module.exports = db;
