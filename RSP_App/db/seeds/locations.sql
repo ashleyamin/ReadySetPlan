@@ -1,8 +1,8 @@
 \c precrisis_checklist
 
-INSERT INTO locations (title) VALUES
-  ('File Cabinet'),
-  ('Personal Computer'),
-  ('Cloud Storage'),
-  ('My Lawyer'),
-  ('Ask Me');
+INSERT INTO locations (id, title) VALUES
+  (1, 'File Cabinet'),
+  (2, 'Personal Computer'),
+  (3, 'Cloud Storage'),
+  (4, 'My Lawyer'),
+  (5, 'Ask Me');

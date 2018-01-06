@@ -10,11 +10,18 @@
 <body>
   <div id="navbar">
     <h1>Ready Set Plan!</h1>
+    <a href="/plan/new">New</a>
   </div>
   <div id="items">
-    <h2>Item1</h2>
-    <p>Description of all of this stuff.</p>
-    <p>Location</p>
+    <% items.forEach(item => { %>
+        <h1>
+          <a href="<%= `/plan/${item.id}` %>">
+            <%= item.title %>
+          </a>
+        </h4>
+        <p><%= item.description %></p>
+        <p><%= item.location_id %></p>
+    <% }) %>
   </div>
 </body>
 </html>
