@@ -1,1 +1,40 @@
-<h1>Edit Item</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="navbar">
+    <h1>Edit Item</h1>
+  </div>
+  <div id="items">
+    <form action="<%= `/plan/${item.id}?_method=PUT` %>" method="POST">
+      <label for="title">Title</label>
+      <input id="title" type="text" name="title" value="<%= item.title %>" />
+      <br />
+      <label for="description">Description</label>
+      <input id="description" type="text" name="description" value="<%= item.description %>" />
+      <br />
+      <label for="location_id">Location</label>
+      <select id="location_id" name="location_id">
+        <% location.forEach(location => { %>
+          <option
+            value="<%= location.id %>"
+            selected="<%= item.location_id %>">
+            <%= `${location.title}` %>
+          </option>
+        <% }) %>
+      </select>
+      <input type="submit" value="Save changes" />
+    </form>
+    <form action="<%= `/plan/${item.id}?_method=DELETE` %>" method="POST">
+      <input type="submit" value="Delete" />
+    </form>
+    <a href="<%= `/plan` %>">Cancel</a>
+  </div>
+</body>
+</html>
