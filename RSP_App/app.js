@@ -6,6 +6,11 @@ const methodOverride = require('method-override');
 const path = require('path');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 7000;
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
+
+require('dotenv').config();
 
 // static files
 app.use(express.static('public'));
@@ -23,7 +28,27 @@ app.get('/', (req, res) => {
   res.send('Things are working!');
 });
 
-//all routes
+app.use(cookieParser());
+app.use(bodyParser());
+
+app.use(session({
+  secret: process.env.SESSION_KEY,
+  resave: false,
+  saveUninitialized: true,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//authorization routes
+const authRouter = require('./routes/auth-routes');
+app.use('/auth', authRouter);
+
+const authHelpers = require('./services/auth/auth-helpers');
+app.use(authHelpers.loginRequired)
+
+
+//all other routes
 const itemRouter = require('./routes/item-routes');
 app.use('/plan', itemRouter)
 
