@@ -2,20 +2,20 @@ const db = require('../db/config');
 
 const User = {};
 
-User.findByEmail = email => {
+User.findByUserName = userName => {
   return db.oneOrNone(`
     SELECT * FROM users
-    WHERE email = $1
-  `, [email]);
+    WHERE username = $1
+  `, [userName]);
 };
 
 User.create = user => {
   return db.one(`
     INSERT INTO users
-    (email, password_digest)
-    VALUES ($1, $2)
+    (username, email, password_digest)
+    VALUES ($1, $2, $3)
     RETURNING *
-  `, [user.email, user.password_digest]);
+  `, [user.username, user.email, user.password_digest]);
 };
 
 module.exports = User;

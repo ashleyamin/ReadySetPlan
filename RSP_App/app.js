@@ -12,6 +12,10 @@ const passport = require('passport');
 
 require('dotenv').config();
 
+app.use(cookieParser());
+app.use(bodyParser());
+
+
 // static files
 app.use(express.static('public'));
 
@@ -28,8 +32,6 @@ app.get('/', (req, res) => {
   res.send('Things are working!');
 });
 
-app.use(cookieParser());
-app.use(bodyParser());
 
 app.use(session({
   secret: process.env.SESSION_KEY,
