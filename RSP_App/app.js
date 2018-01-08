@@ -9,12 +9,12 @@ const PORT = process.env.PORT || 7000;
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 require('dotenv').config();
 
 app.use(cookieParser());
 app.use(bodyParser());
-
 
 // static files
 app.use(express.static('public'));

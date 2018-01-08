@@ -21,6 +21,21 @@ authRouter.post('/login', passport.authenticate('local', {
   })
 );
 
+authRouter.get('/login/google',
+  passport.authenticate('google'));
+
+authRouter.get('/login/google/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+
+authRouter.get('/plan',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+    res.render('index', { user: req.user });
+  });
+
 authRouter.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
