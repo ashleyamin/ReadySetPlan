@@ -11,6 +11,7 @@
   <div id="navbar">
     <h1>Ready Set Plan!</h1>
     <a href="/plan/new">New</a>
+    <a href="#" onclick="signOut();">Sign out</a>
   </div>
   <div id="items">
     <% items.forEach(item => { %>
@@ -23,5 +24,14 @@
         <p><%= item.location_id %></p>
     <% }) %>
   </div>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
 </body>
 </html>
+

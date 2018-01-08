@@ -1,12 +1,13 @@
 \c precrisis_checklist
 
 CREATE TABLE IF NOT EXISTS locations (
-  id INTEGER PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   title TEXT
 );
 
 CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY NOT NULL,
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(255) UNIQUE NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
   password_digest TEXT NOT NULL
 );

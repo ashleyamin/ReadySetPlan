@@ -21,7 +21,7 @@
       <br />
       <label for="location_id">Location</label>
       <select id="location_id" name="location_id">
-        <% locations.forEach(location => { %>
+        <% location.forEach(location => { %>
           <option
             value="<%= location.id %>"
             selected="<%= item.location_id == location.id %>">
