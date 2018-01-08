@@ -69,11 +69,15 @@ Prioritized features include the following:
 - Email registration + Google API registration options
 - CSS applied to all Views
 
-![time matrix]
+![time priority matrix](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/tpmatrix.JPG)
 
 ## Trello Board
 
 ![Initial Trello Layout](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/trello%20board.png)
+
+##User Stories
+
+![User Stories](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/userstories.JPG)
 
 ## MVP 
 
