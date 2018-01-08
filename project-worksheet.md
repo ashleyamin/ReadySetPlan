@@ -73,7 +73,7 @@ Prioritized features include the following:
 
 ## Trello Board
 
-![initial trello layout] (https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/trello%20board.png)
+![Initial Trello Layout](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/trello%20board.png)
 
 ## MVP 
 
