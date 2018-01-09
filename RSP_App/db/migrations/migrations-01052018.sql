@@ -8,17 +8,17 @@ CREATE TABLE IF NOT EXISTS locations (
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(255) UNIQUE,
-  google_email VARCHAR(255) UNIQUE,
+  google_id VARCHAR(255) UNIQUE,
   email VARCHAR(255) UNIQUE,
-  password_digest TEXT NOT NULL
+  password_digest TEXT
 );
 
-CREATE TABLE IF NOT EXISTS items (
-  id BIGSERIAL PRIMARY KEY NOT NULL,
-  title VARCHAR(75),
-  description VARCHAR(255),
-  location_id INTEGER,
-  FOREIGN KEY(location_id) REFERENCES locations(id),
-  user_id INTEGER,
-  FOREIGN KEY(user_id) REFERENCES users(id)
-);
+-- CREATE TABLE IF NOT EXISTS items (
+--   id BIGSERIAL PRIMARY KEY NOT NULL,
+--   title VARCHAR(75),
+--   description VARCHAR(255),
+--   location_id INTEGER,
+--   FOREIGN KEY(location_id) REFERENCES locations(id),
+--   user_id INTEGER,
+--   FOREIGN KEY(user_id) REFERENCES users(id)
+-- );

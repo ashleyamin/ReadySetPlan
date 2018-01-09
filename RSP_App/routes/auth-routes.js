@@ -22,6 +22,12 @@ authRouter.post('/login', passport.authenticate('local', {
   })
 );
 
+authRouter.get('/plan',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+    res.render('index', { user: req.user });
+  });
+
 // GOOGLE ROUTES
 // send to google to do the authentication
 // profile gets us their basic information including their name
@@ -30,10 +36,11 @@ authRouter.get('/google', passport.authenticate('google', { scope : ['profile', 
 
 // the callback after google has authenticated the user
 authRouter.get('/google/callback',
-        passport.authenticate('google', {
-                successRedirect : '/plan',
-                failureRedirect : '/test'
-        }));
+        passport.authenticate('google'),
+        (req, res) =>{
+          console.log('trying to redirect')
+          res.redirect('/plan')
+        });
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
@@ -44,13 +51,6 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 };
-
-
-authRouter.get('/plan',
-  require('connect-ensure-login').ensureLoggedIn(),
-  function(req, res){
-    res.render('index', { user: req.user });
-  });
 
 
 //logout for local

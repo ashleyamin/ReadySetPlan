@@ -7,11 +7,11 @@ var configAuth = require('./google');
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
-    done(null, user.username);
+    done(null, user.google_id);
   });
 
-  passport.deserializeUser((username, done) => {
-    User.findByUserName(username)
+  passport.deserializeUser((googleid, done) => {
+    User.findByGoogle(googleid)
       .then(user => {
         done(null, user);
       }).catch(err => {
@@ -19,60 +19,62 @@ module.exports = () => {
       });
   });
 
-  passport.use(new GoogleStrategy({
-    clientID: '455936992651-vih6k5il0gqokmnkbfdpqfuc5u2k89mu.apps.googleusercontent.com',
-    clientSecret: 'QJ23aEcMNuvDEv7zoj3_V55Y',
-    callbackURL: "http://localhost:7000/google/callback"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
-
-// //GOOD GOOGLE SIGN IN FROM TUTORIAL
 //   passport.use(new GoogleStrategy({
-
-//       clientID        : configAuth.googleAuth.clientID,
-//       clientSecret    : configAuth.googleAuth.clientSecret,
-//       callbackURL     : configAuth.googleAuth.callbackURL,
-
+//     clientID: '455936992651-vih6k5il0gqokmnkbfdpqfuc5u2k89mu.apps.googleusercontent.com',
+//     clientSecret: 'QJ23aEcMNuvDEv7zoj3_V55Y',
+//     callbackURL: "http://localhost:7000/google/callback"
 //   },
-//   function(token, refreshToken, profile, done) {
+//   function(accessToken, refreshToken, profile, cb) {
+//     User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
 
-//       // make the code asynchronous
-//       // User.findOne won't fire until we have all our data back from Google
-//       process.nextTick(function() {
+//GOOD GOOGLE SIGN IN FROM TUTORIAL
+  passport.use(new GoogleStrategy({
 
-//           // try to find the user based on their google id
-//           User.findOne({ 'google.id' : profile.id }, function(err, user) {
-//               if (err)
-//                   return done(err);
+      clientID        : configAuth.googleAuth.clientID,
+      clientSecret    : configAuth.googleAuth.clientSecret,
+      callbackURL     : configAuth.googleAuth.callbackURL,
+      passReqToCallback: true
+  },
+  function(req, token, refreshToken, profile, done) {
 
-//               if (user) {
+      // make the code asynchronous
+      // User.findOne won't fire until we have all our data back from Google
+      // process.nextTick(function() {
 
-//                   // if a user is found, log them in
-//                   return done(null, user);
-//               } else {
-//                   // if the user isnt in our database, create a new user
-//                   var newUser          = new User();
+        User.google({
+          google_id: profile.id
+        })
+        .then( user => {
+          return done(null, user)
+        })
+        .catch( err => {
+          console.log(err)
+        })
 
-//                   // set all of the relevant information
-//                   newUser.google.id    = profile.id;
-//                   newUser.google.token = token;
-//                   newUser.google.name  = profile.displayName;
-//                   newUser.google.email = profile.emails[0].value; // pull the first email
+          // try to find the user based on their google id
+          // User.findByGoogle(profile.id, function(err, user) {
+          //     if (err) return done(err);
 
-//                   // save the user
-//                   newUser.save(function(err) {
-//                       if (err)
-//                           throw err;
-//                       return done(null, newUser);
-//                   });
-//               }
-//           });
-//       });
-//   }));
+          //     if (user) {
+
+          //         // if a user is found, log them in
+          //         return done(null, user);
+          //     } else {
+          //         // if the user isnt in our database, create a new user
+          //        User.google({
+          //         google_id: profile.id
+          //        }).then( user => {
+          //         res.redirect('/plan')
+          //        }).catch( err => {
+          //         console.log(err)
+          //        })
+          //     }
+          // });
+      // });
+  }));
 
 }; // closes the module.exports
