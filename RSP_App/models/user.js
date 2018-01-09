@@ -9,6 +9,13 @@ User.findByUserName = userName => {
   `, [userName]);
 };
 
+// User.findByGoogleName = google_id => {
+//   return db.oneOrNone(`
+//     SELECT * FROM users
+//     WHERE google_id = $1
+//   `, [google_id]);
+// };
+
 User.create = user => {
   return db.one(`
     INSERT INTO users
