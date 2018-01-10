@@ -12,6 +12,7 @@ Item.showLocationVenue = () => {
       SELECT items.id, items.title, items.description, locations.title AS venue FROM locations
       JOIN items ON
       items.location_id = locations.id
+      ORDER BY items.id ASC
     `
   );
 };

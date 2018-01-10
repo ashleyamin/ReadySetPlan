@@ -56,7 +56,7 @@ function isLoggedIn(req, res, next) {
 //logout for local
 authRouter.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/');
+  res.redirect('/auth/login');
 });
 //auth/login
 
