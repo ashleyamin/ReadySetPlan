@@ -13,14 +13,13 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 require('dotenv').config();
 
-app.use(cookieParser());
-app.use(bodyParser());
-
 // static files
 app.use(express.static('public'));
 
 //use dependencies
 app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser());
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -32,10 +31,10 @@ app.get('/', (req, res) => {
   res.send('Things are working!');
 });
 
-
+//required for passport
 app.use(session({
   secret: process.env.SESSION_KEY,
-  resave: false,
+  resave: true,
   saveUninitialized: true,
 }));
 

@@ -7,9 +7,10 @@ CREATE TABLE IF NOT EXISTS locations (
 
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(255) UNIQUE NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  password_digest TEXT NOT NULL
+  username VARCHAR(255) UNIQUE,
+  google_id VARCHAR(255) UNIQUE,
+  email VARCHAR(255) UNIQUE,
+  password_digest TEXT
 );
 
 CREATE TABLE IF NOT EXISTS items (

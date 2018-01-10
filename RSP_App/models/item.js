@@ -6,6 +6,18 @@ Item.findAll = () => {
   return db.query('SELECT * FROM items ORDER BY id ASC');
 };
 
+Item.showLocationTitle = () => {
+  return db.query(
+    `
+      SELECT items, locations.title FROM locations
+      JOIN items ON
+      items.location_id = locations.id
+      WHERE items.location_id = $1
+    `,
+    [id]
+  );
+};
+
 Item.findById = id => {
   return db.oneOrNone(`SELECT * FROM items WHERE id = $1`, [id]);
 };

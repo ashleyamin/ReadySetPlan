@@ -1,6 +1,9 @@
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../../models/user');
+
+// load the google auth variables
+var configAuth = require('./google');
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
@@ -15,31 +18,38 @@ module.exports = () => {
         done(err, null);
       });
   });
-};
 
-//google stuff
-// const configAuth = require('./google');
+  passport.serializeUser((user, done) => {
+    done(null, user.google_id);
+  });
 
-// module.exports = function(passport) {
-//   passport.serializeUser(function(user, done) {
-//     done(null, user.id);
-//   });
-//   passport.deserializeUser(function(id, done) {
-//     User.findById(id, function(err, user) {
-//       done(err, user);
-//     });
-//   });
-// passport.use(new GoogleStrategy({
-//   clientID : configAuth.googleAuth.clientID,
-//   clientSecret : configAuth.googleAuth.clientSecret,
-//   callbackURL : configAuth.googleAuth.callbackURL,
-// },
-// cuntion(token, refreshToken, profile, done){
-//   process.nextTicket(function() {
+  passport.deserializeUser((googleid, done) => {
+    User.findByGoogle(googleid)
+      .then(user => {
+        done(null, user);
+      }).catch(err => {
+        done(err, null);
+      });
+  });
 
-//   })
-// }))
+//GOOD GOOGLE SIGN IN FROM TUTORIAL
+  passport.use(new GoogleStrategy({
 
+      clientID        : configAuth.googleAuth.clientID,
+      clientSecret    : configAuth.googleAuth.clientSecret,
+      callbackURL     : configAuth.googleAuth.callbackURL,
+      passReqToCallback: true
+  },
+  function(req, token, refreshToken, profile, done) {
+        User.google({
+          google_id: profile.id
+        })
+        .then( user => {
+          return done(null, user)
+        })
+        .catch( err => {
+          console.log(err)
+        })
+  }));
 
-
-// }
+}; // closes the module.exports
