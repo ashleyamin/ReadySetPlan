@@ -13,12 +13,12 @@ CREATE TABLE IF NOT EXISTS users (
   password_digest TEXT
 );
 
--- CREATE TABLE IF NOT EXISTS items (
---   id BIGSERIAL PRIMARY KEY NOT NULL,
---   title VARCHAR(75),
---   description VARCHAR(255),
---   location_id INTEGER,
---   FOREIGN KEY(location_id) REFERENCES locations(id),
---   user_id INTEGER,
---   FOREIGN KEY(user_id) REFERENCES users(id)
--- );
+CREATE TABLE IF NOT EXISTS items (
+  id BIGSERIAL PRIMARY KEY NOT NULL,
+  title VARCHAR(75),
+  description VARCHAR(255),
+  location_id INTEGER,
+  FOREIGN KEY(location_id) REFERENCES locations(id),
+  user_id INTEGER,
+  FOREIGN KEY(user_id) REFERENCES users(id)
+);
