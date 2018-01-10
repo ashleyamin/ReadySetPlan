@@ -130,6 +130,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | CRUD App Setup | H | 8hrs| 10hrs | 10hrs |
 | Email Registration | H | 4hrs| 4hrs | 4hrs |
 | Google API Registration | H | 15hrs| 14hrs | 14hrs |
+| CSS Styling | H | 8hrs| 0hrs | X |
 | Logout Functionality | H | 2hrs| Xhrs | X |
 
 ## Additional Libraries
