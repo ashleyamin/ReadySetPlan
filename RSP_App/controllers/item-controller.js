@@ -13,6 +13,23 @@ itemController.index = (req, res) => {
     });
 };
 
+// to show each item and the location name (instead of location ID)
+// itemController.index = (req, res) => {
+//   Item.findById()
+//     .then(items => {
+//       Location.findAll()
+//       .then(location => {
+//         res.render('index', { item: item, location: location })
+//       })
+//     .catch(err => {
+//       res.status(400).json(err);
+//     });
+//   })
+//     .catch(err => {
+//       res.status(400).json(err);
+//     });
+// };
+
 itemController.edit = (req, res) => {
   Item.findById(req.params.id)
     .then(item => {
