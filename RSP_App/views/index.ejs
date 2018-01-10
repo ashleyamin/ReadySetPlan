@@ -15,13 +15,14 @@
   </div>
   <div id="items">
     <% items.forEach(item => { %>
+      <% console.log(item) %>
         <h1>
           <a href="<%= `/plan/${item.id}` %>">
             <%= item.title %>
           </a>
         </h4>
         <p><%= item.description %></p>
-        <p><%= item.location_id %></p>
+        <p><%= item.venue %></p>
     <% }) %>
   </div>
 </body>

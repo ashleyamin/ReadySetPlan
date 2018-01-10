@@ -4,7 +4,7 @@ const Location = require('../models/location');
 const itemController = {};
 
 itemController.index = (req, res) => {
-  Item.findAll()
+  Item.showLocationVenue()
     .then(items => {
       res.render('index', { items: items });
     })
@@ -15,17 +15,20 @@ itemController.index = (req, res) => {
 
 // to show each item and the location name (instead of location ID)
 // itemController.index = (req, res) => {
-//   Item.findById()
+//   Item.findAll()
 //     .then(items => {
 //       Location.findAll()
 //       .then(location => {
-//         res.render('index', { item: item, location: location })
+//         console.log(location)
+//         res.render('index', { items: items, location: location })
 //       })
 //     .catch(err => {
+//       console.log('location error', err)
 //       res.status(400).json(err);
 //     });
 //   })
 //     .catch(err => {
+//       console.log('item error', err)
 //       res.status(400).json(err);
 //     });
 // };

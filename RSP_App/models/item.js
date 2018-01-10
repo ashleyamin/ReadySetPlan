@@ -6,15 +6,13 @@ Item.findAll = () => {
   return db.query('SELECT * FROM items ORDER BY id ASC');
 };
 
-Item.showLocationTitle = () => {
+Item.showLocationVenue = () => {
   return db.query(
     `
-      SELECT items, locations.title FROM locations
+      SELECT items.id, items.title, items.description, locations.title AS venue FROM locations
       JOIN items ON
       items.location_id = locations.id
-      WHERE items.location_id = $1
-    `,
-    [id]
+    `
   );
 };
 
