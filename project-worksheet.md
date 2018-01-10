@@ -51,10 +51,15 @@ You will be expected to use the following technologies to implement this project
 |Day 2: Fri| Pseudocode\actual code, App setup| Complete
 |Day 3: Sat| Build out core features| Complete
 |Day 4: Sun| Build out core features | Complete
-|Day 5: Mon| Basic Clickable Model | 
-|Day 6: Tue| Working Prototype| 
-|Day 7: Wed| Completed App / Slides |
-|Day 8: Thur| Project Presentations |
+|Day 5: Mon| Basic Clickable Model | Complete
+|Day 6: Tue| Working Prototype| Complete
+|Day 7: Wed| CSS Styling |
+|Day 8: Thur| CSS Styling |
+|Day 9: Fri| Post-MVP |
+|Day 10: Sat| Post-MVP |
+|Day 11: Sun| Post-MVP |
+|Day 12: Mon| Completed App / Slides / Heroku |
+|Day 13: Tue| Project Presentations |
 
 ## Project Description
 
@@ -124,7 +129,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | CSS Setup (CSS Grid and Flexbox) | H | 3hr| 1hr | X |
 | CRUD App Setup | H | 8hrs| 10hrs | 10hrs |
 | Email Registration | H | 4hrs| 4hrs | 4hrs |
-| Google API Registration | H | 15hrs| 6hrs | X |
+| Google API Registration | H | 15hrs| 14hrs | 14hrs |
 | Logout Functionality | H | 2hrs| Xhrs | X |
 
 ## Additional Libraries
