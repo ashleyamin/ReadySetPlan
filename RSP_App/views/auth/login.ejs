@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<% include ../partials/head %>
+
 <meta name="google-signin-client_id" content="455936992651-vih6k5il0gqokmnkbfdpqfuc5u2k89mu.apps.googleusercontent.com">
 
 <form method="POST" action="/auth/login">
@@ -7,6 +8,5 @@
   <input type="submit" value="Log in!" />
 </form>
 
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
 <a method="GET" href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span>Sign In with Google</a>
 <a href="/auth/register">Register Here</a>

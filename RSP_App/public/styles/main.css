@@ -1,3 +1,5 @@
+/* Base Rules for App */
+
 body {
   background-color: rgba(255,255,255,1);
 }
@@ -5,29 +7,85 @@ body {
 #navbar {
   background-color: rgba(8, 101, 180, 1);
   max-width: 100%;
+  max-height: 100%;
   font-size: 25px;
   text-align: center;
 }
+
+/* Layout Rules for App */
 
 h1{
   color: white;
 }
 
-#items {
+/* Hamburger Nav for Mobile */
+.navbar, .navbar-inverse {
+  border-radius: 0;
+  border: none;
+  margin-bottom: 0;
+  min-height: 80px;
+}
+
+.nav li {
+  display: inline;
+  color: rgba(255,255,255,1);
+}
+
+.navbar-inverse .navbar-nav > li > a {
   background-color: rgba(8, 101, 180, 1);
+  font-size: 18px;
+  padding: 30px 25px 33px 25px;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+  background-color: rgba(8, 101, 180, 1);
+  transition: 0.7s all linear;
+  height: 100%;
+}
+
+
+/* Modules Rules for App */
+
+/* Link appearance for different states */
+
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: grey;
+  text-decoration: none;
+}
+a:active {
+  color: grey;
+}
+
+/*Sub-header structure */
+
+#outstanding {
+  background-color: rgba(211, 211, 211, 1);
   max-width: 100%;
-  font-size: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#items {
+  background-color: rgba(255, 255, 255, 1);
+  max-width: 100%;
   text-align: center;
 }
 
 h2 {
-  color: white;
+  font-size: 18px;
 }
 
 p {
   color: grey;
+  font-size: 18px;
 }
-
+/*
 #location_id {
   color: red;
-}
+}*/

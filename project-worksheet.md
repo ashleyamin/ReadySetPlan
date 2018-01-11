@@ -53,7 +53,7 @@ You will be expected to use the following technologies to implement this project
 |Day 4: Sun| Build out core features | Complete
 |Day 5: Mon| Basic Clickable Model | Complete
 |Day 6: Tue| Working Prototype| Complete
-|Day 7: Wed| CSS Styling |
+|Day 7: Wed| CSS Styling | Complete
 |Day 8: Thur| CSS Styling |
 |Day 9: Fri| Post-MVP |
 |Day 10: Sat| Post-MVP |
@@ -131,7 +131,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Email Registration | H | 4hrs| 4hrs | 4hrs |
 | Google API Registration | H | 15hrs| 14hrs | 14hrs |
 | CSS Styling | H | 8hrs| 0hrs | X |
-| Logout Functionality | H | 2hrs| Xhrs | X |
+| Logout Functionality | H | 2hrs| 2hrs | 2hrs |
 
 ## Additional Libraries
 | Library | Description | 
