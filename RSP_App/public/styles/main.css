@@ -1,0 +1,33 @@
+body {
+  background-color: rgba(255,255,255,1);
+}
+
+#navbar {
+  background-color: rgba(8, 101, 180, 1);
+  max-width: 100%;
+  font-size: 25px;
+  text-align: center;
+}
+
+h1{
+  color: white;
+}
+
+#items {
+  background-color: rgba(8, 101, 180, 1);
+  max-width: 100%;
+  font-size: 25px;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: grey;
+}
+
+#location_id {
+  color: red;
+}
