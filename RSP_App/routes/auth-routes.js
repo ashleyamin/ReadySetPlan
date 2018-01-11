@@ -29,27 +29,20 @@ authRouter.get('/plan',
   });
 
 // GOOGLE ROUTES
-// send to google to do the authentication
-// profile gets us their basic information including their name
-// email gets their emails
 authRouter.get('/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 
-// the callback after google has authenticated the user
+//the callback after google has authenticated the user
 authRouter.get('/google/callback',
         passport.authenticate('google'),
         (req, res) =>{
           console.log('trying to redirect')
           res.redirect('/plan')
         });
-// route middleware to make sure a user is logged in
+//check to see if loggedin
 function isLoggedIn(req, res, next) {
-
-    // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
         return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
+    res.redirect('/plan');
 };
 
 
@@ -58,6 +51,5 @@ authRouter.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/auth/login');
 });
-//auth/login
 
 module.exports = authRouter;
