@@ -1,11 +1,15 @@
 <% include ../partials/head %>
-<meta name="google-signin-client_id" content="455936992651-vih6k5il0gqokmnkbfdpqfuc5u2k89mu.apps.googleusercontent.com">
-
-<form method="POST" action="/auth/login">
-  <input name="username" type="text" placeholder="username" required />
-  <input name="password" type="password" placeholder="password" required />
-  <input type="submit" value="Log in!" />
-</form>
-
-<a method="GET" href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span>Sign In with Google</a>
-<a href="/auth/register">Register Here</a>
+<body class="grid-container">
+  <header></header>
+  <main>
+    <h2>Sign In Here</h2>
+    <form method="POST" action="/auth/login" id="sign-in">
+      <input name="username" type="text" placeholder="username" required />
+      <input name="password" type="password" placeholder="password" required />
+      <input type="submit" value="Log in!" />
+    </form>
+    <h2>Don't have an account?</h2>
+    <a href="/auth/register">Register Here</a>
+  </main>
+  <footer></footer>
+</body>

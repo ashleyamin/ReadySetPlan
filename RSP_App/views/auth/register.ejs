@@ -1,9 +1,27 @@
 <% include ../partials/head %>
-
-<form method="POST" action="/auth/register">
-  <input name="username" type="text" placeholder="username" required />
-  <input name="email" type="email" placeholder="email" required />
-  <input name="password" type="password" placeholder="password" required />
-  <input type="submit" value="Register!" />
-</form>
-
+<meta name="google-signin-client_id" content="455936992651-vih6k5il0gqokmnkbfdpqfuc5u2k89mu.apps.googleusercontent.com">
+<body class="grid-container">
+  <header></header>
+  <main>
+    <h2>Ready Set Plan</h2>
+    <p class="start">Create your free account</p>
+    <div id="google"><a method="GET" href="/auth/google" class="two"></a></div>
+    <br>
+    <p class="start">or</p>
+    <br>
+    <div id="register">
+      <form method="POST" action="/auth/register">
+        <input name="username" type="text" placeholder="username" required />
+        <br>
+        <input name="email" type="email" placeholder="email" required />
+        <br>
+        <input name="password" type="password" placeholder="password" required />
+        <br>
+        <input type="submit" value="Create Account" />
+      </form>
+    </div>
+    <p class="start">Have an account?</p>
+    <div id="sign-in-link"><a href="/auth/login" class="three">Sign In</a></div>
+  </main>
+  <footer></footer>
+</body>
