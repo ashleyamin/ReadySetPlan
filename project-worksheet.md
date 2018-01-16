@@ -65,7 +65,7 @@ You will be expected to use the following technologies to implement this project
 
 The Ready Set Plan App enables one to plan ahead for a medical crisis by providing a list of essential documents one should have created and stored for a loved one to access in the event of an emergency.
 
-![Heroku Placeholder - Final Version.Jan2018](https://heroku.com)
+![Ready Set Plan - Heroku](https://readysetplan.herokuapp.com/readysetplan)
 
 ## Priority Matrix
 
@@ -138,7 +138,8 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  
 | Google Fonts | Used to set font for all text in game |
 | Google Login API Image | Used to create image of google sign-in logo |
-| Google Login API | Used to sign-in a user with their google credentials|
+| Google Login API | Used to sign-in a user with their google credentials |
+| OAuth | Works with passport to ease use of Google Login API |
 
 
 ## Code Snippet
@@ -167,4 +168,11 @@ GOOGLE SIGN IN API
 
 ## Instructions for Downloading Code
 Instructions for downloading the code and running it on localhost:
+
+To install this example on your computer, clone the repository and install dependencies
+1. Git clone
+2. Install dependencies, located in .json, npm install
+3. Open a web browser and run on localhost:7000/readysetplan
+
+This app uses environment variables to configure the clientID and clientSecret to access Google's API. Start the server with your own variables set to the appropriate credentials - see google developers console.
 
