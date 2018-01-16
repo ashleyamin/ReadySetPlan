@@ -1,10 +1,7 @@
 {
   "name": "rsp_app",
   "version": "1.0.0",
-  "description": "ready set plan",
-  "engines": {
-    "node": "9.3.0"
-  }
+  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
