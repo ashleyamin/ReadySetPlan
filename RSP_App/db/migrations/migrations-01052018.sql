@@ -1,5 +1,3 @@
-\c precrisis_checklist
-
 CREATE TABLE IF NOT EXISTS locations (
   id SERIAL PRIMARY KEY,
   title TEXT

@@ -1,5 +1,3 @@
-\c precrisis_checklist
-
 INSERT INTO items (title, description, location_id) VALUES
   (
   'Durable Power of Attorney',
