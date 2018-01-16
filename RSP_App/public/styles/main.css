@@ -22,12 +22,14 @@ header {
   font-size: 20px;
   background-color: rgba(8, 101, 180, 1);
   color: rgba(255,255,255,1);
+  font-family: 'Open Sans', sans-serif;
 }
 
 main {
   flex: 1;
   grid-column: span 3;
   align-content: center;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 nav {
@@ -36,6 +38,7 @@ nav {
   padding: 20px;
   align-content: right;
   max-height: 30px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 footer {
@@ -44,6 +47,7 @@ footer {
   text-align: center;
   font-size: 20px;
   background-color: rgba(8, 101, 180, 1);
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Hamburger Nav for Mobile */
@@ -255,7 +259,7 @@ a.four:active {
 }
 
 #sign-in-link {
-  width: 48px;
+  width: 50px;
   display: block;
   cursor: pointer;
   margin-left: auto;
@@ -264,7 +268,7 @@ a.four:active {
 
 @media (min-width: 768px) {
   #sign-in-link {
-  width: 48px;
+  width: 50px;
   display: block;
   cursor: pointer;
   margin-left: auto;
@@ -301,7 +305,7 @@ a.four:active {
   cursor: pointer;
   margin-left: 15%;
   margin-right: 15%;
-  width: 50px;
+  width: 48px;
   align-content: right;
   color: white;
 }
@@ -318,7 +322,7 @@ a.four:active {
   cursor: pointer;
   margin-left: 22%;
   margin-right: 22%;
-  width: 50px;
+  width: 48px;
   }
 }
 
@@ -365,7 +369,7 @@ a.four:active {
   cursor: pointer;
   margin-left: 15%;
   margin-right: 15%;
-  width: 50px;
+  width: 48px;
   align-content: right;
 }
 
@@ -381,7 +385,7 @@ a.four:active {
   cursor: pointer;
   margin-left: 22%;
   margin-right: 22%;
-  width: 50px;
+  width: 48px;
   }
 }
 
