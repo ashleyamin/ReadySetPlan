@@ -54,12 +54,12 @@ You will be expected to use the following technologies to implement this project
 |Day 5: Mon| Basic Clickable Model | Complete
 |Day 6: Tue| Working Prototype| Complete
 |Day 7: Wed| CSS Styling | Complete
-|Day 8: Thur| CSS Styling |
-|Day 9: Fri| Post-MVP |
-|Day 10: Sat| Post-MVP |
-|Day 11: Sun| Post-MVP |
-|Day 12: Mon| Completed App / Slides / Heroku |
-|Day 13: Tue| Project Presentations |
+|Day 8: Thur| CSS Styling | Complete
+|Day 9: Fri| Post-MVP | Complete
+|Day 10: Sat| Post-MVP | Complete
+|Day 11: Sun| Post-MVP | Complete
+|Day 12: Mon| Completed App / Slides / Heroku | Complete
+|Day 13: Tue| Project Presentations | Complete
 
 ## Project Description
 
@@ -130,22 +130,39 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | CRUD App Setup | H | 8hrs| 10hrs | 10hrs |
 | Email Registration | H | 4hrs| 4hrs | 4hrs |
 | Google API Registration | H | 15hrs| 14hrs | 14hrs |
-| CSS Styling | H | 8hrs| 0hrs | X |
+| CSS Styling | H | 8hrs| 10hrs | 10hrs |
 | Logout Functionality | H | 2hrs| 2hrs | 2hrs |
 
-## Additional Libraries
-| Library | Description | 
+## Libraries, Technologies, APIs and Modules Used
+| Type | Description | 
 | --- | :---: |  
 | Google Fonts | Used to set font for all text in game |
+| Google Login API Image | Used to create image of google sign-in logo |
+| Google Login API | Used to sign-in a user with their google credentials|
 
 
 ## Code Snippet
 
+GOOGLE SIGN IN API
 
-## Change Log
+  passport.use(new GoogleStrategy({
 
-
-## Issues and Resolutions
+      clientID        : configAuth.googleAuth.clientID,
+      clientSecret    : configAuth.googleAuth.clientSecret,
+      callbackURL     : configAuth.googleAuth.callbackURL,
+      passReqToCallback: true
+  },
+  function(req, token, refreshToken, profile, done) {
+        User.google({
+          username: profile.id
+        })
+        .then( user => {
+          return done(null, user)
+        })
+        .catch( err => {
+          console.log(err)
+        })
+  }));
 
 
 ## Instructions for Downloading Code

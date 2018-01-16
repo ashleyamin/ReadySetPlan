@@ -17,20 +17,7 @@ module.exports = () => {
       }).catch(err => {
         done(err, null);
       });
-  }); //here is the problem
-
-  // passport.serializeUser((user, done) => {
-  //   done(null, user.google_id);
-  // });
-
-  // passport.deserializeUser((googleid, done) => {
-  //   User.findByGoogle(googleid)
-  //     .then(user => {
-  //       done(null, user);
-  //     }).catch(err => {
-  //       done(err, null);
-  //     });
-  // });
+  });
 
 //GOOD GOOGLE SIGN IN FROM TUTORIAL
   passport.use(new GoogleStrategy({
