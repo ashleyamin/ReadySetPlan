@@ -1,25 +1,25 @@
 <% include ./partials/head %>
-<body>
-  <div id="navbar">
-    <h1>Ready Set Plan!</h1>
-    <ul>
-      <li><a href="/plan/new">New</a></li>
-      <li><a href="/auth/logout">Sign Out</a></li>
-      <li><a href="#">Help</a></li>
-    </ul>
- </div>
-  <div id="outstanding">To Accomplish</div>
-  <div id="items">
-    <% items.forEach(item => { %>
-      <% console.log(item) %>
-        <h2>
-          <a href="<%= `/plan/${item.id}` %>">
-            <%= item.title %>
-          </a>
-        </h2>
-        <p><%= item.description %></p>
-        <p><%= item.venue %></p>
-    <% }) %>
-  </div>
+<body class="grid-container">
+  <header>Pre-Crisis Checklist</header>
+  <nav>
+    <div id="sign-out-link"><a href="/auth/logout" class="one">Sign Out</a></div>
+    <div class="item-action"><a href="/plan/new" class="one">New</a></div>
+  </nav>
+  <main>
+    <div id="outstanding">To Accomplish</div>
+    <div id="items">
+      <% items.forEach(item => { %>
+        <% console.log(item) %>
+          <h2>
+            <a href="<%= `/plan/${item.id}` %>" class="four">
+              <%= item.title %>
+            </a>
+          </h2>
+          <p><%= item.description %></p>
+          <p><%= item.venue %></p>
+      <% }) %>
+    </div>
+  </main>
+  <footer></footer>
 </body>
 </html>

@@ -27,13 +27,15 @@ header {
 main {
   flex: 1;
   grid-column: span 3;
-  padding: 20px;
   align-content: center;
 }
 
 nav {
+  grid-column: span 3;
   background-color: rgba(8, 101, 180, 1);
   padding: 20px;
+  align-content: right;
+  max-height: 30px;
 }
 
 footer {
@@ -83,7 +85,15 @@ h2{
   color: grey;
   font-size: 18px;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.register {
+  color: grey;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
   margin-top: 25px;
 }
 
@@ -229,6 +239,21 @@ a.four:active {
   }
 }
 
+#create {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 12px 20px;
+  font-size: 12px;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  border-radius: 6px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+}
+
 #sign-in-link {
   width: 48px;
   display: block;
@@ -244,6 +269,150 @@ a.four:active {
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
+  }
+}
+
+#register-link {
+  width: 100px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #register-link {
+  width: 100px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+.item-action {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 50px;
+  align-content: right;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .item-action {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 50px;
+  }
+}
+
+#item-action-delete {
+  background-color: red;
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 60px;
+  align-content: right;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  #item-action-delete {
+  background-color: red;
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 50px;
+  }
+}
+
+#sign-out-link {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 50px;
+  align-content: right;
+}
+
+@media (min-width: 768px) {
+  #sign-out-link {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 50px;
+  }
+}
+
+#cancel {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  align-content: right;
+}
+
+@media (min-width: 768px) {
+  #cancel {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
   }
 }
 
@@ -271,19 +440,53 @@ a.four:active {
   }
 }
 
+input[type=text] {
+  width: 185px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+#description[type=text] {
+  width: 200px;
+  height: 150px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type=email] {
+  width: 185px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type=password] {
+  width: 185px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
 
 /*Sub-header structure */
 
 #outstanding {
   background-color: rgba(218, 218, 218, 1);
-  color: rgba(175, 175, 175, 1);
-  max-width: 100%;
+  color: rgba(130, 130, 130, 1);
+  width: 100%;
   font-size: 20px;
   text-align: center;
 }
 
 #items {
   background-color: rgba(255, 255, 255, 1);
+  color: rgba(100, 100, 100, 1);
   max-width: 100%;
   text-align: center;
 }

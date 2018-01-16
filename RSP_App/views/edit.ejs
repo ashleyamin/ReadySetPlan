@@ -1,32 +1,42 @@
 <% include ./partials/head %>
-<body>
-  <div id="navbar">
-    <h1>Edit Item</h1>
-  </div>
-  <div id="items">
-    <form action="<%= `/plan/${item.id}?_method=PUT` %>" method="POST">
-      <label for="title">Title</label>
-      <input id="title" type="text" name="title" value="<%= item.title %>" />
-      <br />
-      <label for="description">Description</label>
-      <input id="description" type="text" name="description" value="<%= item.description %>" />
-      <br />
-      <label for="location_id">Location</label>
-      <select id="location_id" name="location_id">
-        <% location.forEach(location => { %>
-          <option
-            value="<%= location.id %>"
-            selected="<%= item.location_id %>">
-            <%= `${location.title}` %>
-          </option>
-        <% }) %>
-      </select>
-      <input type="submit" value="Save changes" />
-    </form>
-    <form action="<%= `/plan/${item.id}?_method=DELETE` %>" method="POST">
-      <input type="submit" value="Delete" />
-    </form>
-    <a href="<%= `/plan` %>">Cancel</a>
-  </div>
+<body class="grid-container">
+  <header>Edit Item</header>
+  <nav>
+    <div id="cancel"><a href="<%= `/plan` %>" class="one">Cancel</a></div>
+  </nav>
+  <main>
+    <div id="items">
+      <form action="<%= `/plan/${item.id}?_method=PUT` %>" method="POST">
+        <label for="title">Title</label>
+        <br>
+        <input id="title" type="text" name="title" value="<%= item.title %>" />
+        <br />
+        <label for="description">Description</label>
+        <br>
+        <input id="description" type="text" name="description" value="<%= item.description %>" />
+        <br />
+        <label for="location_id">Location</label>
+        <br>
+        <select id="location_id" name="location_id">
+          <% location.forEach(location => { %>
+            <option
+              value="<%= location.id %>"
+              selected="<%= item.location_id %>">
+              <%= `${location.title}` %>
+            </option>
+          <% }) %>
+        </select>
+        <br>
+        <br>
+        <input class="item-action" type="submit" value="Save" />
+      </form>
+      <br>
+      <br>
+      <form action="<%= `/plan/${item.id}?_method=DELETE` %>" method="POST">
+        <input id="item-action-delete" type="submit" value="Delete" />
+      </form>
+    </div>
+  </main>
+  <footer></footer>
 </body>
 </html>

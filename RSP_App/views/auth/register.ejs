@@ -4,11 +4,9 @@
   <header></header>
   <main>
     <h2>Ready Set Plan</h2>
-    <p class="start">Create your free account</p>
+    <p class="register">Create your free account</p>
     <div id="google"><a method="GET" href="/auth/google" class="two"></a></div>
-    <br>
     <p class="start">or</p>
-    <br>
     <div id="register">
       <form method="POST" action="/auth/register">
         <input name="username" type="text" placeholder="username" required />
@@ -17,10 +15,10 @@
         <br>
         <input name="password" type="password" placeholder="password" required />
         <br>
-        <input type="submit" value="Create Account" />
+        <input id="create" type="submit" value="Create Account" />
       </form>
     </div>
-    <p class="start">Have an account?</p>
+    <p class="register">Have an account?</p>
     <div id="sign-in-link"><a href="/auth/login" class="three">Sign In</a></div>
   </main>
   <footer></footer>
