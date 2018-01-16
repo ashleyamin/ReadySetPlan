@@ -3,7 +3,7 @@ module.exports = {
     'googleAuth' : {
         'clientID'      : '455936992651-vih6k5il0gqokmnkbfdpqfuc5u2k89mu.apps.googleusercontent.com',
         'clientSecret'  : 'QJ23aEcMNuvDEv7zoj3_V55Y',
-        'callbackURL'   : 'http://readysetplan.herokuapp.com/auth/google/callback'
+        'callbackURL'   : 'https://readysetplan.herokuapp.com/auth/google/callback'
     }
 
 };
