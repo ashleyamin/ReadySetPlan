@@ -35,4 +35,8 @@ User.google = user => {
     `, user.username);
 };
 
+// User.logOutGoogle = user => {
+
+// }
+
 module.exports = User;

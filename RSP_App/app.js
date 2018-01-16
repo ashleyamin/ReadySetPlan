@@ -31,6 +31,12 @@ app.get('/', (req, res) => {
   res.send('Things are working!');
 });
 
+app.get('/readysetplan', (req, res) => {
+  res.render('start');
+});
+
+
+
 //required for passport
 app.use(session({
   secret: process.env.SESSION_KEY,

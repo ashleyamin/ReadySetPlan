@@ -1,33 +1,500 @@
-body {
-  background-color: rgba(255,255,255,1);
+/* Layout Rules for App */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
-#navbar {
-  background-color: rgba(8, 101, 180, 1);
-  max-width: 100%;
-  font-size: 25px;
-  text-align: center;
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+  }
 }
+
+header {
+  grid-column: span 3;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgba(8, 101, 180, 1);
+  color: rgba(255,255,255,1);
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  flex: 1;
+  grid-column: span 3;
+  align-content: center;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+nav {
+  grid-column: span 3;
+  background-color: rgba(8, 101, 180, 1);
+  padding: 20px;
+  align-content: right;
+  max-height: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+  grid-column: span 3;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgba(8, 101, 180, 1);
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Hamburger Nav for Mobile */
+
+
+/* Modules Rules for App */
 
 h1{
+  color: rgba(0,0,0,1);
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 75px;
+    text-align: center;
+    color: rgba(0,0,0,1);
+  }
+}
+
+h2{
+  color: rgba(0,0,0,1);
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    color: rgba(0,0,0,1);
+  }
+}
+
+.start {
+  color: grey;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.register {
+  color: grey;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+#sign-in {
+  color: grey;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 25px;
+}
+
+/* Item Link appearance for different states */
+
+a.one:link {
+  color: white;
+  text-decoration: none;
+}
+a.one:visited {
+  color: white;
+  text-decoration: none;
+}
+a.one:hover {
+  color: white;
+  text-decoration: none;
+}
+a.one:active {
+  color: white;
+  text-decoration: none;
+}
+
+a.two:link {
+  color: white;
+  text-decoration: none;
+}
+a.two:visited {
+  color: white;
+  text-decoration: none;
+}
+a.two:hover {
+  color: white;
+  text-decoration: none;
+}
+a.two:active {
+  color: white;
+  text-decoration: none;
+}
+
+a.three:link {
+  color: blue;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgba(173,216,230,1);
+}
+a.three:visited {
+  color: blue;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgba(173,216,230,1);
+}
+a.three:hover {
+  color: grey;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgba(173,216,230,1);
+}
+a.three:active {
+  color: grey;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgba(173,216,230,1);
+}
+
+a.four:link {
+  color: black;
+  text-decoration: none;
+}
+a.four:visited {
+  color: black;
+  text-decoration: none;
+}
+a.four:hover {
+  color: grey;
+  text-decoration: none;
+}
+a.four:active {
+  color: grey;
+  text-decoration: none;
+}
+
+/*Button Options */
+
+#get-started {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 6px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+@media (min-width: 768px) {
+  #get-started {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 6px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  }
+}
+
+#google {
+  height: 48px;
+  width: 190px;
+  background-image: url("https://i.imgur.com/4A40HsG.png");
+  display: block;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #google {
+  height: 48px;
+  width: 192px;
+  background-image: url("https://i.imgur.com/4A40HsG.png");
+  display: block;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+#create {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 12px 20px;
+  font-size: 12px;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  border-radius: 6px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+}
+
+#sign-in-link {
+  width: 50px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #sign-in-link {
+  width: 50px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+#register-link {
+  width: 100px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #register-link {
+  width: 100px;
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+.item-action {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 48px;
+  align-content: right;
   color: white;
 }
 
+@media (min-width: 768px) {
+  .item-action {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 48px;
+  }
+}
+
+#item-action-delete {
+  background-color: red;
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 60px;
+  align-content: right;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  #item-action-delete {
+  background-color: red;
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 50px;
+  }
+}
+
+#sign-out-link {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 48px;
+  align-content: right;
+}
+
+@media (min-width: 768px) {
+  #sign-out-link {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 48px;
+  }
+}
+
+#cancel {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  align-content: right;
+}
+
+@media (min-width: 768px) {
+  #cancel {
+  background-color: rgba(218, 218, 218, 1);
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  }
+}
+
+/*Form Options */
+
+#register {
+  min-height: 48px;
+  width: 190px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #register {
+  min-height: 48px;
+  width: 190px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+input[type=text] {
+  width: 185px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+#description[type=text] {
+  width: 200px;
+  height: 150px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type=email] {
+  width: 185px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type=password] {
+  width: 185px;
+  padding: 10px 18px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+
+/*Sub-header structure */
+
+#outstanding {
+  background-color: rgba(218, 218, 218, 1);
+  color: rgba(130, 130, 130, 1);
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+
 #items {
-  background-color: rgba(8, 101, 180, 1);
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(100, 100, 100, 1);
   max-width: 100%;
-  font-size: 25px;
   text-align: center;
 }
 
 h2 {
-  color: white;
-}
-
-p {
-  color: grey;
-}
-
-#location_id {
-  color: red;
+  font-size: 18px;
 }
