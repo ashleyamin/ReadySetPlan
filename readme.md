@@ -65,8 +65,6 @@ You will be expected to use the following technologies to implement this project
 
 The Ready Set Plan App enables one to plan ahead for a medical crisis by providing a list of essential documents one should have created and stored for a loved one to access in the event of an emergency.
 
-![Ready Set Plan - Heroku](https://readysetplan.herokuapp.com/readysetplan)
-
 ## Priority Matrix
 
 Prioritized features include the following:
@@ -74,17 +72,15 @@ Prioritized features include the following:
 - Email registration + Google API registration options
 - CSS applied to all Views
 
-![time priority matrix](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/tpmatrix.JPG)
-
 ## Trello Board
 
-![Initial Trello Layout](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/trello%20board.png)
+![Initial Trello Layout](https://github.com/ashleyamin/ReadySetPlan/blob/master/planning/trello%20board.png)
 
 ##User Stories
 
-![User Stories](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/blob/dev/planning/userstories.JPG)
+![User Stories](https://github.com/ashleyamin/ReadySetPlan/blob/master/planning/userstories.JPG)
 
-## MVP 
+## MVP
 
 - CRUD functionality
 - Email registration + Google API registration options
@@ -97,7 +93,7 @@ Prioritized features include the following:
 
 ## Wireframes
 
-![Wireframes - high fid, color version](https://git.generalassemb.ly/ashleyamin/PROJECT-2-PROMPT/tree/dev/whiteboarding)
+![Wireframes - high fid, color version](https://github.com/ashleyamin/ReadySetPlan/tree/master/whiteboarding)
 
 
 ## CRUD App Components
@@ -119,9 +115,9 @@ If the user would like to add another document/item to the list, the user can do
 
 ## Functional Components
 
-Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  Does your logic indicate that code could be encapsulated for the purpose of reusablility.  Once a function has been defined it can then be incorporated into a class as a method. 
+Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  Does your logic indicate that code could be encapsulated for the purpose of reusablility.  Once a function has been defined it can then be incorporated into a class as a method.
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. 
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted.
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
@@ -134,7 +130,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Logout Functionality | H | 2hrs| 2hrs | 2hrs |
 
 ## Libraries, Technologies, APIs and Modules Used
-| Type | Description | 
+| Type | Description |
 | --- | :---: |  
 | Google Fonts | Used to set font for all text in game |
 | Google Login API Image | Used to create image of google sign-in logo |
@@ -175,4 +171,3 @@ To install this example on your computer, clone the repository and install depen
 3. Open a web browser and run on localhost:7000/readysetplan
 
 This app uses environment variables to configure the clientID and clientSecret to access Google's API. Start the server with your own variables set to the appropriate credentials - see google developers console.
-
